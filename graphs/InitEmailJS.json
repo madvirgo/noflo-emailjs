@@ -9,7 +9,28 @@
         },
         "main": false
     },
-    "inports": {},
+    "inports": {
+        "data": {
+            "process": "core/Kick_k1n8h",
+            "port": "data",
+            "metadata": {
+                "x": -36,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "in": {
+            "process": "core/Kick_k1n8h",
+            "port": "in",
+            "metadata": {
+                "x": -36,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
     "outports": {},
     "groups": [
         {

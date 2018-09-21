@@ -29,7 +29,17 @@
             "component": "strings/SendString",
             "metadata": {
                 "label": "SendString",
-                "x": 216,
+                "x": 144,
+                "y": -36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "emailjs/InitEmailJS_5hlop": {
+            "component": "emailjs/InitEmailJS",
+            "metadata": {
+                "label": "InitEmailJS",
+                "x": 360,
                 "y": -36,
                 "width": 72,
                 "height": 72

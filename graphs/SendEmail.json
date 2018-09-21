@@ -1,0 +1,16 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "SendEmail",
+        "description": "Send Email Using EmailJS",
+        "icon": "envelope",
+        "environment": {
+            "type": "noflo-browser"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {},
+    "connections": []
+}
