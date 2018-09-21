@@ -8,24 +8,35 @@
     },
     "inports": {},
     "outports": {},
-    "groups": [],
+    "groups": [
+        {
+            "name": "Import Emailjs",
+            "nodes": [
+                "dom/CreateElement_wb8so",
+                "dom/SetAttribute_p7dg"
+            ],
+            "metadata": {
+                "description": "Create script tag and set cdn src"
+            }
+        },
+        {
+            "name": "EmailJS Init Script",
+            "nodes": [
+                "dom/CreateElement_10lyc",
+                "dom/SetAttribute_izhzf"
+            ],
+            "metadata": {
+                "description": ""
+            }
+        }
+    ],
     "processes": {
         "dom/WriteHtml_od71q": {
             "component": "dom/WriteHtml",
             "metadata": {
                 "label": "WriteHtml",
-                "x": 792,
-                "y": 216,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "strings/StringTemplate_fa5er": {
-            "component": "strings/StringTemplate",
-            "metadata": {
-                "label": "StringTemplate",
-                "x": 648,
-                "y": 252,
+                "x": 1188,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -79,6 +90,66 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "dom/CreateElement_wb8so": {
+            "component": "dom/CreateElement",
+            "metadata": {
+                "label": "CreateElement",
+                "x": 684,
+                "y": -216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/SetAttribute_p7dg": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetAttribute",
+                "x": 900,
+                "y": -288,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/SetAttribute_jaa2q": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetAttribute",
+                "x": 900,
+                "y": -180,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/SetAttribute_izhzf": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetAttribute",
+                "x": 900,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/CreateElement_10lyc": {
+            "component": "dom/CreateElement",
+            "metadata": {
+                "label": "CreateElement",
+                "x": 648,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "strings/StringTemplate_x8zr3": {
+            "component": "strings/StringTemplate",
+            "metadata": {
+                "label": "StringTemplate",
+                "x": 756,
+                "y": 288,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
@@ -89,50 +160,6 @@
             },
             "tgt": {
                 "process": "objects/SetPropertyValue_d4jjj",
-                "port": "in"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "objects/SetPropertyValue_d4jjj",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "strings/StringTemplate_fa5er",
-                "port": "in"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "dom/GetElement_5pplp",
-                "port": "element"
-            },
-            "tgt": {
-                "process": "dom/WriteHtml_od71q",
-                "port": "container"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "strings/StringTemplate_fa5er",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "dom/WriteHtml_od71q",
-                "port": "html"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "core/Kick_we5pg",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "dom/GetElement_5pplp",
                 "port": "in"
             },
             "metadata": {}
@@ -175,11 +202,107 @@
             }
         },
         {
-            "data": "<script type=\"text/javascript\" src=\"https://cdn.emailjs.com/sdk/2.2.4/email.min.js\"></script> <script type=\"text/javascript\">    (function(){       emailjs.init(\"<%= userId %>\");    })(); </script>",
+            "src": {
+                "process": "core/Kick_we5pg",
+                "port": "out"
+            },
             "tgt": {
-                "process": "strings/StringTemplate_fa5er",
-                "port": "template"
+                "process": "dom/GetElement_5pplp",
+                "port": "selector"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "dom/CreateElement_wb8so",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/SetAttribute_p7dg",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "dom/GetElement_5pplp",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/CreateElement_wb8so",
+                "port": "container"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "dom/CreateElement_wb8so",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/SetAttribute_jaa2q",
+                "port": "element"
+            },
+            "metadata": {
+                "route": 0
             }
+        },
+        {
+            "src": {
+                "process": "dom/GetElement_5pplp",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/CreateElement_10lyc",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "dom/CreateElement_10lyc",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/SetAttribute_izhzf",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "dom/SetAttribute_izhzf",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "dom/WriteHtml_od71q",
+                "port": "container"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "objects/SetPropertyValue_d4jjj",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "strings/StringTemplate_x8zr3",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "strings/StringTemplate_x8zr3",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "dom/WriteHtml_od71q",
+                "port": "html"
+            },
+            "metadata": {}
         },
         {
             "data": "userId",
@@ -189,24 +312,87 @@
             }
         },
         {
-            "data": "head",
+            "data": "user1",
             "tgt": {
-                "process": "dom/GetElement_5pplp",
-                "port": "selector"
+                "process": "core/Repeat_plbgk",
+                "port": "in"
             }
         },
         {
-            "data": null,
+            "data": "head",
             "tgt": {
                 "process": "core/Kick_we5pg",
                 "port": "data"
             }
         },
         {
-            "data": "user1",
+            "data": "",
             "tgt": {
-                "process": "core/Repeat_plbgk",
-                "port": "in"
+                "process": "dom/GetElement_5pplp",
+                "port": "selector"
+            }
+        },
+        {
+            "data": "script",
+            "tgt": {
+                "process": "dom/CreateElement_wb8so",
+                "port": "tagname"
+            }
+        },
+        {
+            "data": "type",
+            "tgt": {
+                "process": "dom/SetAttribute_p7dg",
+                "port": "attribute"
+            }
+        },
+        {
+            "data": "text/javascript",
+            "tgt": {
+                "process": "dom/SetAttribute_p7dg",
+                "port": "value"
+            }
+        },
+        {
+            "data": "src",
+            "tgt": {
+                "process": "dom/SetAttribute_jaa2q",
+                "port": "attribute"
+            }
+        },
+        {
+            "data": "https://cdn.emailjs.com/sdk/2.2.4/email.min.js",
+            "tgt": {
+                "process": "dom/SetAttribute_jaa2q",
+                "port": "value"
+            }
+        },
+        {
+            "data": "script",
+            "tgt": {
+                "process": "dom/CreateElement_10lyc",
+                "port": "tagname"
+            }
+        },
+        {
+            "data": "type",
+            "tgt": {
+                "process": "dom/SetAttribute_izhzf",
+                "port": "attribute"
+            }
+        },
+        {
+            "data": "text/javascript",
+            "tgt": {
+                "process": "dom/SetAttribute_izhzf",
+                "port": "value"
+            }
+        },
+        {
+            "data": "    (function(){       emailjs.init(\"<%= userId %>\");    })(); ",
+            "tgt": {
+                "process": "strings/StringTemplate_x8zr3",
+                "port": "template"
             }
         }
     ]
