@@ -12,8 +12,8 @@
         {
             "name": "Import Emailjs",
             "nodes": [
-                "dom/CreateElement_wb8so",
-                "dom/SetAttribute_p7dg"
+                "CreateScriptElement",
+                "SetTypeAttribute"
             ],
             "metadata": {
                 "description": "Create script tag and set cdn src"
@@ -22,8 +22,8 @@
         {
             "name": "EmailJS Init Script",
             "nodes": [
-                "dom/CreateElement_10lyc",
-                "dom/SetAttribute_izhzf"
+                "CreateScriptElement_agmz0",
+                "SetTypeAttribute_b3e06"
             ],
             "metadata": {
                 "description": ""
@@ -51,100 +51,100 @@
                 "height": 72
             }
         },
-        "objects/SetPropertyValue_d4jjj": {
+        "SetUserId": {
             "component": "objects/SetPropertyValue",
             "metadata": {
-                "label": "SetPropertyValue",
+                "label": "SetUserId",
                 "x": 468,
                 "y": 288,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/GetElement_5pplp": {
+        "GetHeaderElement": {
             "component": "dom/GetElement",
             "metadata": {
-                "label": "GetElement",
+                "label": "GetHeaderElement",
                 "x": 468,
                 "y": 36,
                 "width": 72,
                 "height": 72
             }
         },
-        "core/Kick_we5pg": {
+        "SendHeader": {
             "component": "core/Kick",
             "metadata": {
-                "label": "Kick",
+                "label": "SendHeader",
                 "x": 302.33333333333337,
                 "y": 79.83333333333334,
                 "width": 72,
                 "height": 72
             }
         },
-        "core/Repeat_plbgk": {
+        "Start": {
             "component": "core/Repeat",
             "metadata": {
-                "label": "Repeat",
+                "label": "Start",
                 "x": 144,
                 "y": 144,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/CreateElement_wb8so": {
+        "CreateScriptElement": {
             "component": "dom/CreateElement",
             "metadata": {
-                "label": "CreateElement",
+                "label": "CreateScriptElement",
                 "x": 684,
                 "y": -216,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/SetAttribute_p7dg": {
+        "SetTypeAttribute": {
             "component": "dom/SetAttribute",
             "metadata": {
-                "label": "SetAttribute",
+                "label": "SetTypeAttribute",
                 "x": 900,
                 "y": -288,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/SetAttribute_jaa2q": {
+        "SetSrcAttribute": {
             "component": "dom/SetAttribute",
             "metadata": {
-                "label": "SetAttribute",
+                "label": "SetSrcAttribute",
                 "x": 900,
                 "y": -180,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/SetAttribute_izhzf": {
+        "SetTypeAttribute_b3e06": {
             "component": "dom/SetAttribute",
             "metadata": {
-                "label": "SetAttribute",
+                "label": "SetTypeAttribute",
                 "x": 900,
                 "y": 72,
                 "width": 72,
                 "height": 72
             }
         },
-        "dom/CreateElement_10lyc": {
+        "CreateScriptElement_agmz0": {
             "component": "dom/CreateElement",
             "metadata": {
-                "label": "CreateElement",
+                "label": "CreateScriptElement",
                 "x": 648,
                 "y": 72,
                 "width": 72,
                 "height": 72
             }
         },
-        "strings/StringTemplate_x8zr3": {
+        "EmailJsInitFuncTemplate": {
             "component": "strings/StringTemplate",
             "metadata": {
-                "label": "StringTemplate",
+                "label": "EmailJsInitFuncTemplate",
                 "x": 756,
                 "y": 288,
                 "width": 72,
@@ -159,29 +159,29 @@
                 "port": "out"
             },
             "tgt": {
-                "process": "objects/SetPropertyValue_d4jjj",
+                "process": "SetUserId",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "core/Repeat_plbgk",
+                "process": "Start",
                 "port": "out"
             },
             "tgt": {
-                "process": "core/Kick_we5pg",
+                "process": "SendHeader",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "core/Repeat_plbgk",
+                "process": "Start",
                 "port": "out"
             },
             "tgt": {
-                "process": "objects/SetPropertyValue_d4jjj",
+                "process": "SetUserId",
                 "port": "value"
             },
             "metadata": {
@@ -190,7 +190,7 @@
         },
         {
             "src": {
-                "process": "core/Repeat_plbgk",
+                "process": "Start",
                 "port": "out"
             },
             "tgt": {
@@ -203,44 +203,44 @@
         },
         {
             "src": {
-                "process": "core/Kick_we5pg",
+                "process": "SendHeader",
                 "port": "out"
             },
             "tgt": {
-                "process": "dom/GetElement_5pplp",
+                "process": "GetHeaderElement",
                 "port": "selector"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "dom/CreateElement_wb8so",
+                "process": "CreateScriptElement",
                 "port": "element"
             },
             "tgt": {
-                "process": "dom/SetAttribute_p7dg",
+                "process": "SetTypeAttribute",
                 "port": "element"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "dom/GetElement_5pplp",
+                "process": "GetHeaderElement",
                 "port": "element"
             },
             "tgt": {
-                "process": "dom/CreateElement_wb8so",
+                "process": "CreateScriptElement",
                 "port": "container"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "dom/CreateElement_wb8so",
+                "process": "CreateScriptElement",
                 "port": "element"
             },
             "tgt": {
-                "process": "dom/SetAttribute_jaa2q",
+                "process": "SetSrcAttribute",
                 "port": "element"
             },
             "metadata": {
@@ -249,11 +249,11 @@
         },
         {
             "src": {
-                "process": "dom/GetElement_5pplp",
+                "process": "GetHeaderElement",
                 "port": "element"
             },
             "tgt": {
-                "process": "dom/CreateElement_10lyc",
+                "process": "CreateScriptElement_agmz0",
                 "port": "container"
             },
             "metadata": {
@@ -262,18 +262,18 @@
         },
         {
             "src": {
-                "process": "dom/CreateElement_10lyc",
+                "process": "CreateScriptElement_agmz0",
                 "port": "element"
             },
             "tgt": {
-                "process": "dom/SetAttribute_izhzf",
+                "process": "SetTypeAttribute_b3e06",
                 "port": "element"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "dom/SetAttribute_izhzf",
+                "process": "SetTypeAttribute_b3e06",
                 "port": "element"
             },
             "tgt": {
@@ -284,18 +284,18 @@
         },
         {
             "src": {
-                "process": "objects/SetPropertyValue_d4jjj",
+                "process": "SetUserId",
                 "port": "out"
             },
             "tgt": {
-                "process": "strings/StringTemplate_x8zr3",
+                "process": "EmailJsInitFuncTemplate",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "strings/StringTemplate_x8zr3",
+                "process": "EmailJsInitFuncTemplate",
                 "port": "out"
             },
             "tgt": {
@@ -307,91 +307,91 @@
         {
             "data": "userId",
             "tgt": {
-                "process": "objects/SetPropertyValue_d4jjj",
+                "process": "SetUserId",
                 "port": "property"
             }
         },
         {
             "data": "user1",
             "tgt": {
-                "process": "core/Repeat_plbgk",
+                "process": "Start",
                 "port": "in"
             }
         },
         {
             "data": "head",
             "tgt": {
-                "process": "core/Kick_we5pg",
+                "process": "SendHeader",
                 "port": "data"
             }
         },
         {
             "data": "",
             "tgt": {
-                "process": "dom/GetElement_5pplp",
+                "process": "GetHeaderElement",
                 "port": "selector"
             }
         },
         {
             "data": "script",
             "tgt": {
-                "process": "dom/CreateElement_wb8so",
+                "process": "CreateScriptElement",
                 "port": "tagname"
             }
         },
         {
             "data": "type",
             "tgt": {
-                "process": "dom/SetAttribute_p7dg",
+                "process": "SetTypeAttribute",
                 "port": "attribute"
             }
         },
         {
             "data": "text/javascript",
             "tgt": {
-                "process": "dom/SetAttribute_p7dg",
+                "process": "SetTypeAttribute",
                 "port": "value"
             }
         },
         {
             "data": "src",
             "tgt": {
-                "process": "dom/SetAttribute_jaa2q",
+                "process": "SetSrcAttribute",
                 "port": "attribute"
             }
         },
         {
             "data": "https://cdn.emailjs.com/sdk/2.2.4/email.min.js",
             "tgt": {
-                "process": "dom/SetAttribute_jaa2q",
+                "process": "SetSrcAttribute",
                 "port": "value"
             }
         },
         {
             "data": "script",
             "tgt": {
-                "process": "dom/CreateElement_10lyc",
+                "process": "CreateScriptElement_agmz0",
                 "port": "tagname"
             }
         },
         {
             "data": "type",
             "tgt": {
-                "process": "dom/SetAttribute_izhzf",
+                "process": "SetTypeAttribute_b3e06",
                 "port": "attribute"
             }
         },
         {
             "data": "text/javascript",
             "tgt": {
-                "process": "dom/SetAttribute_izhzf",
+                "process": "SetTypeAttribute_b3e06",
                 "port": "value"
             }
         },
         {
             "data": "    (function(){       emailjs.init(\"<%= userId %>\");    })(); ",
             "tgt": {
-                "process": "strings/StringTemplate_x8zr3",
+                "process": "EmailJsInitFuncTemplate",
                 "port": "template"
             }
         }
