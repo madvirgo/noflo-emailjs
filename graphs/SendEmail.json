@@ -8,9 +8,124 @@
             "type": "noflo-browser"
         }
     },
-    "inports": {},
-    "outports": {},
+    "inports": {
+        "name": {
+            "process": "emailjs/TemplateParams_qien8",
+            "port": "name",
+            "metadata": {
+                "x": 216,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "notes": {
+            "process": "emailjs/TemplateParams_qien8",
+            "port": "notes",
+            "metadata": {
+                "x": 216,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "replyemail": {
+            "process": "emailjs/TemplateParams_qien8",
+            "port": "replyemail",
+            "metadata": {
+                "x": 216,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "message": {
+            "process": "emailjs/TemplateParams_qien8",
+            "port": "message",
+            "metadata": {
+                "x": 216,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "serviceid": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "serviceid",
+            "metadata": {
+                "x": 432,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "templateid": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "templateid",
+            "metadata": {
+                "x": 432,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "userid": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "userid",
+            "metadata": {
+                "x": 432,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "outports": {
+        "out": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "out",
+            "metadata": {
+                "x": 720,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
     "groups": [],
-    "processes": {},
-    "connections": []
+    "processes": {
+        "emailjs/EmailSender_cz2kt": {
+            "component": "emailjs/EmailSender",
+            "metadata": {
+                "label": "EmailSender",
+                "x": 576,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "emailjs/TemplateParams_qien8": {
+            "component": "emailjs/TemplateParams",
+            "metadata": {
+                "label": "TemplateParams",
+                "x": 360,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "emailjs/TemplateParams_qien8",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "emailjs/EmailSender_cz2kt",
+                "port": "templateparams"
+            },
+            "metadata": {}
+        }
+    ]
 }

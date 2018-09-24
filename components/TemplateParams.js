@@ -12,7 +12,7 @@ exports.getComponent = () => {
     datatype: 'string',
     description: 'EmailJS Template Param notes'
   });
-  c.inPorts.add('replyEmail', {
+  c.inPorts.add('replyemail', {
     datatype: 'string',
     description: 'EmailJS Template Param reply_email'
   });
@@ -31,7 +31,7 @@ exports.getComponent = () => {
     // Read packets we need to process
     const name = input.getData('name');
     const notes = input.getData('notes');
-    const replyEmail = input.getData('replyEmail');
+    const replyEmail = input.getData('replyemail');
     const message = input.getData('message');
     // Process data and send output
     output.send({
