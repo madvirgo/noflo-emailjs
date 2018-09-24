@@ -20,7 +20,7 @@ exports.getComponent = () => {
     datatype: 'string',
     description: 'EmailJS Template Param message'
   });
-  c.outPorts.add('out', {
+  c.outPorts.add('templateparams', {
     datatype: 'object'
   });
   c.process((input, output) => {
@@ -35,7 +35,7 @@ exports.getComponent = () => {
     const message = input.getData('message');
     // Process data and send output
     output.send({
-      out: {
+      templateparams: {
         name: name,
         notes: notes,
         replyEmail: replyEmail,

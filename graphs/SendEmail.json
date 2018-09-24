@@ -9,52 +9,12 @@
         }
     },
     "inports": {
-        "name": {
-            "process": "emailjs/TemplateParams_qien8",
-            "port": "name",
-            "metadata": {
-                "x": 216,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "notes": {
-            "process": "emailjs/TemplateParams_qien8",
-            "port": "notes",
-            "metadata": {
-                "x": 216,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "replyemail": {
-            "process": "emailjs/TemplateParams_qien8",
-            "port": "replyemail",
-            "metadata": {
-                "x": 216,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "message": {
-            "process": "emailjs/TemplateParams_qien8",
-            "port": "message",
-            "metadata": {
-                "x": 216,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
         "serviceid": {
             "process": "emailjs/EmailSender_cz2kt",
             "port": "serviceid",
             "metadata": {
-                "x": 432,
-                "y": 252,
+                "x": 396,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
@@ -63,7 +23,7 @@
             "process": "emailjs/EmailSender_cz2kt",
             "port": "templateid",
             "metadata": {
-                "x": 432,
+                "x": 396,
                 "y": 252,
                 "width": 72,
                 "height": 72
@@ -73,8 +33,48 @@
             "process": "emailjs/EmailSender_cz2kt",
             "port": "userid",
             "metadata": {
-                "x": 432,
+                "x": 396,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "name": {
+            "process": "emailjs/TemplateParams_ql5tu",
+            "port": "name",
+            "metadata": {
+                "x": 252,
+                "y": 144,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "notes": {
+            "process": "emailjs/TemplateParams_ql5tu",
+            "port": "notes",
+            "metadata": {
+                "x": 252,
                 "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "replyemail": {
+            "process": "emailjs/TemplateParams_ql5tu",
+            "port": "replyemail",
+            "metadata": {
+                "x": 252,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "message": {
+            "process": "emailjs/TemplateParams_ql5tu",
+            "port": "message",
+            "metadata": {
+                "x": 252,
+                "y": 468,
                 "width": 72,
                 "height": 72
             }
@@ -84,6 +84,16 @@
         "out": {
             "process": "emailjs/EmailSender_cz2kt",
             "port": "out",
+            "metadata": {
+                "x": 720,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "result": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "result",
             "metadata": {
                 "x": 720,
                 "y": 252,
@@ -104,12 +114,12 @@
                 "height": 72
             }
         },
-        "emailjs/TemplateParams_qien8": {
+        "emailjs/TemplateParams_ql5tu": {
             "component": "emailjs/TemplateParams",
             "metadata": {
                 "label": "TemplateParams",
-                "x": 360,
-                "y": 252,
+                "x": 396,
+                "y": 468,
                 "width": 72,
                 "height": 72
             }
@@ -118,8 +128,8 @@
     "connections": [
         {
             "src": {
-                "process": "emailjs/TemplateParams_qien8",
-                "port": "out"
+                "process": "emailjs/TemplateParams_ql5tu",
+                "port": "templateparams"
             },
             "tgt": {
                 "process": "emailjs/EmailSender_cz2kt",

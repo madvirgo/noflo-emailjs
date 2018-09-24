@@ -20,7 +20,7 @@ exports.getComponent = () => {
     datatype: 'object',
     description: 'EmailJS Template Params'
   });
-  c.outPorts.add('out', {
+  c.outPorts.add('result', {
     datatype: 'boolean'
   });
   c.process((input, output) => {
@@ -38,13 +38,13 @@ exports.getComponent = () => {
     emailjs.send(serviceId, templateId, templateParams)
       .then(function(response) {
          output.send({
-           out: true
+           result: true
          });
          // Deactivate
          output.done();
       }, function(error) {
          output.send({
-           out: false
+           result: false
          });
          // Deactivate
          output.done();
