@@ -25,9 +25,12 @@ exports.getComponent = () => {
   });
   c.process((input, output) => {
     // Check preconditions on input data
-    if (!input.hasData('serviceId')) {
+    if (!input.hasData('serviceid')
+       || !input.hasData('templateid')
+       || !input.hasData('templateparams')) {
       return;
     }
+    
     // Read packets we need to process
     const serviceId = input.getData('serviceid');
     const templateId = input.getData('templateid');
