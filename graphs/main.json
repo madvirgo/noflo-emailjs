@@ -8,22 +8,7 @@
     },
     "inports": {},
     "outports": {},
-    "groups": [
-        {
-            "name": "Import Emailjs",
-            "nodes": [],
-            "metadata": {
-                "description": "Create script tag and set cdn src"
-            }
-        },
-        {
-            "name": "EmailJS Init Script",
-            "nodes": [],
-            "metadata": {
-                "description": ""
-            }
-        }
-    ],
+    "groups": [],
     "processes": {
         "emailjs/SendEmail_mthln": {
             "component": "emailjs/SendEmail",
