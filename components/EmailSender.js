@@ -4,27 +4,43 @@ exports.getComponent = () => {
   const c = new noflo.Component();
   c.description = '';
   c.icon = 'paper-plane';
+  c.inPorts.add('userid', {
+    datatype: 'string',
+    description: 'EmailJS UserID',
+    control: true,
+    default: null
+  });
   c.inPorts.add('serviceid', {
     datatype: 'string',
-    description: 'EmailJS ServiceID'
+    description: 'EmailJS ServiceID',
+    control: true,
+    default: null
   });
   c.inPorts.add('templateid', {
     datatype: 'string',
-    description: 'EmailJS TemplateID'
-  });
-  c.inPorts.add('userid', {
-    datatype: 'string',
-    description: 'EmailJS UserID'
+    description: 'EmailJS TemplateID',
+    control: true,
+    default: null
   });
   c.inPorts.add('templateparams', {
     datatype: 'object',
-    description: 'EmailJS Template Params'
+    description: 'EmailJS Template Params',
+    control: true,
+    default: null
+  });
+  c.inPorts.add('sendemail', {
+    datatype: 'bang',
+    description: 'Signal to send the Email'
   });
   c.outPorts.add('result', {
     datatype: 'boolean'
   });
   c.process((input, output) => {
     // Check preconditions on input data
+    if (!input.hasStream('sendemail')) {
+      return;
+    }
+    
     if (!input.hasData('serviceid')
        || !input.hasData('templateid')
        || !input.hasData('templateparams')) {

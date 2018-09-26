@@ -78,6 +78,16 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "sendemail": {
+            "process": "emailjs/EmailSender_cz2kt",
+            "port": "sendemail",
+            "metadata": {
+                "x": 396,
+                "y": 576,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "outports": {

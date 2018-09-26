@@ -1,0 +1,172 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "CreateButtonInput",
+        "description": "",
+        "icon": "hand-pointer-o",
+        "environment": {
+            "type": "noflo-browser",
+            "content": ""
+        }
+    },
+    "inports": {
+        "container": {
+            "process": "dom/CreateElement_cqlp9",
+            "port": "container",
+            "metadata": {
+                "x": 36,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "value": {
+            "process": "SetValue",
+            "port": "value",
+            "metadata": {
+                "x": 36,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "outports": {
+        "element": {
+            "process": "SetValue",
+            "port": "element",
+            "metadata": {
+                "x": 684,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "click": {
+            "process": "interaction/ListenMouse_ky9al",
+            "port": "click",
+            "metadata": {
+                "x": 684,
+                "y": 0,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dblclick": {
+            "process": "interaction/ListenMouse_ky9al",
+            "port": "dblclick",
+            "metadata": {
+                "x": 684,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "groups": [],
+    "processes": {
+        "dom/CreateElement_cqlp9": {
+            "component": "dom/CreateElement",
+            "metadata": {
+                "label": "CreateElement",
+                "x": 180,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "SetType": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetType",
+                "x": 288,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "SetValue": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetValue",
+                "x": 432,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "interaction/ListenMouse_ky9al": {
+            "component": "interaction/ListenMouse",
+            "metadata": {
+                "label": "ListenMouse",
+                "x": 540,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "dom/CreateElement_cqlp9",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "SetType",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "SetType",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "SetValue",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "SetValue",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "interaction/ListenMouse_ky9al",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "input",
+            "tgt": {
+                "process": "dom/CreateElement_cqlp9",
+                "port": "tagname"
+            }
+        },
+        {
+            "data": "type",
+            "tgt": {
+                "process": "SetType",
+                "port": "attribute"
+            }
+        },
+        {
+            "data": "button",
+            "tgt": {
+                "process": "SetType",
+                "port": "value"
+            }
+        },
+        {
+            "data": "value",
+            "tgt": {
+                "process": "SetValue",
+                "port": "attribute"
+            }
+        }
+    ]
+}

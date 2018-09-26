@@ -1,0 +1,164 @@
+{
+    "caseSensitive": false,
+    "properties": {
+        "name": "CreateTextInput",
+        "description": "",
+        "icon": "font",
+        "environment": {
+            "type": "noflo-browser",
+            "content": ""
+        }
+    },
+    "inports": {
+        "container": {
+            "process": "dom/CreateElement_zu922",
+            "port": "container",
+            "metadata": {
+                "x": 180,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "placeholder": {
+            "process": "SetPlaceholder",
+            "port": "value",
+            "metadata": {
+                "x": 180,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "outports": {
+        "element": {
+            "process": "SetPlaceholder",
+            "port": "element",
+            "metadata": {
+                "x": 756,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "onchange": {
+            "process": "interaction/ListenChange_2bct9",
+            "port": "value",
+            "metadata": {
+                "x": 756,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "groups": [],
+    "processes": {
+        "dom/CreateElement_zu922": {
+            "component": "dom/CreateElement",
+            "metadata": {
+                "label": "CreateElement",
+                "x": 288,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "SetType": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetType",
+                "x": 396,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "SetPlaceholder": {
+            "component": "dom/SetAttribute",
+            "metadata": {
+                "label": "SetPlaceholder",
+                "x": 540,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "interaction/ListenChange_2bct9": {
+            "component": "interaction/ListenChange",
+            "metadata": {
+                "label": "ListenChange",
+                "x": 648,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "dom/CreateElement_zu922",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "SetType",
+                "port": "element"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "SetType",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "SetPlaceholder",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "SetPlaceholder",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "interaction/ListenChange_2bct9",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "input",
+            "tgt": {
+                "process": "dom/CreateElement_zu922",
+                "port": "tagname"
+            }
+        },
+        {
+            "data": "type",
+            "tgt": {
+                "process": "SetType",
+                "port": "attribute"
+            }
+        },
+        {
+            "data": "text",
+            "tgt": {
+                "process": "SetType",
+                "port": "value"
+            }
+        },
+        {
+            "data": "placeholder",
+            "tgt": {
+                "process": "SetPlaceholder",
+                "port": "attribute"
+            }
+        }
+    ]
+}

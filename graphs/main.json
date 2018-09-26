@@ -25,21 +25,11 @@
         }
     ],
     "processes": {
-        "strings/SendString_em9cj": {
-            "component": "strings/SendString",
-            "metadata": {
-                "label": "SendString",
-                "x": 144,
-                "y": -36,
-                "width": 72,
-                "height": 72
-            }
-        },
         "emailjs/InitEmailJS_5hlop": {
             "component": "emailjs/InitEmailJS",
             "metadata": {
                 "label": "InitEmailJS",
-                "x": 360,
+                "x": 504,
                 "y": -108,
                 "width": 72,
                 "height": 72
@@ -49,12 +39,412 @@
             "component": "emailjs/SendEmail",
             "metadata": {
                 "label": "SendEmail",
-                "x": 360,
-                "y": 72,
+                "x": 648,
+                "y": 0,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "GetBody": {
+            "component": "dom/GetElement",
+            "metadata": {
+                "label": "GetBody",
+                "x": 36,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateServiceIdInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateServiceIdInput",
+                "x": 324,
+                "y": 0,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateTemplateIdInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateTemplateIdInput",
+                "x": 324,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateTemplateNameInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateTemplateNameInput",
+                "x": 324,
+                "y": 216,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateTemplateNotesInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateTemplateNotesInput",
+                "x": 324,
+                "y": 324,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateTemplateReplyEmailInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateTemplateReplyEmailInput",
+                "x": 324,
+                "y": 432,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateTemplateMessageInput": {
+            "component": "emailjs/CreateTextInput",
+            "metadata": {
+                "label": "CreateTemplateMessageInput",
+                "x": 324,
+                "y": 540,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "CreateSendButton": {
+            "component": "emailjs/CreateButtonInput",
+            "metadata": {
+                "label": "CreateSendButton",
+                "x": 324,
+                "y": 648,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Repeat_no8im": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "Repeat",
+                "x": -108,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "emailjs/sendUserId_wjdq3": {
+            "component": "emailjs/sendUserId",
+            "metadata": {
+                "label": "sendUserId",
+                "x": 324,
+                "y": -108,
                 "width": 72,
                 "height": 72
             }
         }
     },
-    "connections": []
+    "connections": [
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateServiceIdInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "emailjs/InitEmailJS_5hlop",
+                "port": "userid"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "userid"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateTemplateIdInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "CreateServiceIdInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "serviceid"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CreateTemplateIdInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "templateid"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CreateTemplateNameInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "name"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CreateTemplateNotesInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "notes"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CreateTemplateReplyEmailInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "replyemail"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "CreateTemplateMessageInput",
+                "port": "onchange"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "message"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateTemplateNameInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateTemplateNotesInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateTemplateReplyEmailInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateTemplateMessageInput",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "GetBody",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "CreateSendButton",
+                "port": "container"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "CreateSendButton",
+                "port": "click"
+            },
+            "tgt": {
+                "process": "emailjs/SendEmail_mthln",
+                "port": "sendemail"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/Repeat_no8im",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "emailjs/sendUserId_wjdq3",
+                "port": "send"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "core/Repeat_no8im",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "GetBody",
+                "port": "selector"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "emailjs/sendUserId_wjdq3",
+                "port": "userid"
+            },
+            "tgt": {
+                "process": "emailjs/InitEmailJS_5hlop",
+                "port": "userid"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "emailjs/sendUserId_wjdq3",
+                "port": "userid"
+            },
+            "tgt": {
+                "process": "emailjs/InitEmailJS_5hlop",
+                "port": "send"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "data": "Service ID",
+            "tgt": {
+                "process": "CreateServiceIdInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Template ID",
+            "tgt": {
+                "process": "CreateTemplateIdInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Template Name",
+            "tgt": {
+                "process": "CreateTemplateNameInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Template Notes",
+            "tgt": {
+                "process": "CreateTemplateNotesInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Reply Email",
+            "tgt": {
+                "process": "CreateTemplateReplyEmailInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Message",
+            "tgt": {
+                "process": "CreateTemplateMessageInput",
+                "port": "placeholder"
+            }
+        },
+        {
+            "data": "Send",
+            "tgt": {
+                "process": "CreateSendButton",
+                "port": "value"
+            }
+        },
+        {
+            "data": "",
+            "tgt": {
+                "process": "GetBody",
+                "port": "selector"
+            }
+        },
+        {
+            "data": "user_YTTNlMUnq81k0L3VssXMs",
+            "tgt": {
+                "process": "emailjs/sendUserId_wjdq3",
+                "port": "userid"
+            }
+        },
+        {
+            "data": "body",
+            "tgt": {
+                "process": "core/Repeat_no8im",
+                "port": "in"
+            }
+        }
+    ]
 }
