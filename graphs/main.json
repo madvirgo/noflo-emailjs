@@ -25,16 +25,6 @@
         }
     ],
     "processes": {
-        "emailjs/InitEmailJS_5hlop": {
-            "component": "emailjs/InitEmailJS",
-            "metadata": {
-                "label": "InitEmailJS",
-                "x": 504,
-                "y": -108,
-                "width": 72,
-                "height": 72
-            }
-        },
         "emailjs/SendEmail_mthln": {
             "component": "emailjs/SendEmail",
             "metadata": {
@@ -162,17 +152,6 @@
         },
         {
             "src": {
-                "process": "emailjs/InitEmailJS_5hlop",
-                "port": "userid"
-            },
-            "tgt": {
-                "process": "emailjs/SendEmail_mthln",
-                "port": "userid"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
                 "process": "GetBody",
                 "port": "element"
             },
@@ -192,8 +171,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "serviceid"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -203,8 +181,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "templateid"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -214,8 +191,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "name"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -225,8 +201,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "notes"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -236,8 +211,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "replyemail"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -247,8 +221,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "message"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -323,8 +296,7 @@
             "tgt": {
                 "process": "emailjs/SendEmail_mthln",
                 "port": "sendemail"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -358,22 +330,11 @@
                 "port": "userid"
             },
             "tgt": {
-                "process": "emailjs/InitEmailJS_5hlop",
+                "process": "emailjs/SendEmail_mthln",
                 "port": "userid"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
-                "process": "emailjs/sendUserId_wjdq3",
-                "port": "userid"
-            },
-            "tgt": {
-                "process": "emailjs/InitEmailJS_5hlop",
-                "port": "send"
             },
             "metadata": {
-                "route": 0
+                "route": null
             }
         },
         {
