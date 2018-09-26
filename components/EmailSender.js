@@ -1,5 +1,5 @@
 const noflo = require('noflo');
-const emailjs = require('emailjs-com');
+import * as emailjs from 'emailjs-com';
 
 exports.getComponent = () => {
   const c = new noflo.Component();
